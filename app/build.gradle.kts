@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        getByName("debug") {
+            storePassword = "shekhaliay"
+            keyPassword = "shekhaliay"
+            keyAlias = "key0"
+            storeFile = file("E:\\Android with Rossyn\\QRCode\\keystore\\qrscanner.jks")
+        }
+    }
     namespace = "com.shekhaliay.barcodescanner.qrgenrater"
     compileSdk = 34
 
@@ -13,7 +21,6 @@ android {
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
         versionName = "1.0.0"
         vectorDrawables.useSupportLibrary = true
         renderscriptTargetApi = 24
@@ -61,10 +68,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.google.zxing:core:3.3.3")
-
-    implementation("org.bouncycastle:bcprov-jdk15to18:1.64")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+    implementation(libs.core)
+    implementation(libs.bcprov.jdk15to18)
+    implementation(libs.androidx.lifecycle.extensions)
 
 
 }

@@ -19,3 +19,11 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Google ZXing ProGuard rules
+-keep class com.google.zxing.** { *; }
+-dontwarn com.google.zxing.**
+
+# Bouncy Castle ProGuard rules
+-keep class org.bouncycastle.** { *; }
+-dontwarn org.bouncycastle.**
